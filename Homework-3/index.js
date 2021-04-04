@@ -1,98 +1,107 @@
 // 1 //
-res1 = String(x) + y;
-console.log(res1);
-console.log(typeof res1);
+const res = 1;
+const arr = [2, 3, 4, 5];
+for (let i = 0; i < arr.length; i++) {
+  res = res * arr[i];
+}
+console.log(res);
 
-res2 = Boolean(x) + String(y);
-console.log(res2);
-console.log(typeof res2);
-
-res3 = Boolean(x + y);
-console.log(res3);
-console.log(typeof res3);
-
-res4 = NaN + x + y;
-console.log(res4);
-console.log(typeof res4);
+const result = 1;
+const s = 0;
+while (s < arr.length) {
+  result = result * arr[s];
+  s++;
+}
+console.log(result);
 // 2 //
-const number = Number(prompt('enter number')); 
-if (number >= 0){
-    if ((userAge % 2) === 0 ){
-    alert ('number positive')
-    }else {
-    alert('number odd')
+function checkIfEven() {
+  for (let i = 0; i < 16; i++) {
+    if (i % 2 == 0) {
+      console.log(i + " is even");
+    } else {
+      console.log(i + " is odd");
     }
-}else {
-    alert ('not even number')
+  }
 }
 
-const multiple = Number(prompt('enter number')); 
-if ((multiple % 7) === 0 ){
-    alert ('multiple')
-}else {
-    alert ('not even number')
-}
-//3 // 
-let arr = [];
-arr[0] = 11;
-arr[1] = "Hello";
-arr[2] = true;
-arr[3] = null;
+checkIfEven();
+// 3 // 
+const min = 1;
+const max = 500;
+const array = [];
 
-const someVariable = prompt("Enter the fourth element of the array");
-arr.push(someVariable);
-alert("The fifth element of the array is: " + arr[4]);
-arr.shift();
-alert(arr);
+function randArray(random) {
+  for (let i = 0; i < random; i++) {
+    array[i] = (function (x, y) {
+      return Math.floor(Math.random() * x) + y;
+    }(max, min))
+  }
+}
+
+const size = prompt("Enter the array size");
+
+randArray(size);
+
+for (let i = 0; i < array.length; i++) {
+  console.log(array[i]);
+}
 // 4 //
-let cities = ["Rome", "Lviv", "Warshaw"];
-const res = [cities[0] + "*" + sities[1] + "*" + sities[2]];
+function raiseToDegree(a, b) {
+  return a ** b
+}
+let res = raiseToDegree(3, 4)
 console.log(res);
 // 5 //
-const userAge = Number(prompt('enter your age')); 
-if (isAdult >= 18) {
-    alert('you are adult');
-} else if (isAdult <= 10) {
-    alert('you are still young');
+function findMin() {
+  let min = arguments[0];
+  for (let i = 0; i < arguments.length; i++) {
+    if (min > arguments[i])
+      min = arguments[i]; {
+    }
+  }
+  return min;
 }
+console.log(findMin(12, 14, 4, -4, 0.2));
 // 6 //
-const sideA = Number(prompt("Enter side 1"));
-const sideB = Number(prompt("Enter side 2"));
-const sideC = Number(prompt("Enter side 3"));
-if (sideA < 0 || sideB < 0 || sideC < 0) {
-    alert("Incorrect data");
-} else {
-    const halfPerimeter = (sideA + sideB + sideC) / 2;
-    let square = Math.sqrt(halfPerimeter *(halfPerimeter - sideA) * (halfPerimeter - sideB) * (halfPerimeter - sideC));
-    console.log("The square is:" + square.toFixed(3));
+function testUnique(arg) {
+  var n = arg.length;
+  for (var i = 0; i < n - 1; i++) {
+    for (var j = i + 1; j < n; j++) { if (arg[i] === arg[j]) return false; }
+  }
+  return true;
 }
+let arg = [1, 2, 3, 5, 3];
+
+console.log(testUnique(arg));
 // 7 // 
-const time = new Date ();
-const currectDate = time.getHours();
-if (currectDate>= 5 && currectDate <= 11){
-    alert('Good morning');
-}else if (currectDate >11 && currectDate <= 17){
-    alert('Good afternoon');
-}else if (currectDate > 17 && currectDate <= 23){
-    alert('Good evening');
-}else {
-    alert('Good night')
+function lastElem(array, sum) {
+
+  let arr = [];
+
+  if (sum == undefined) {
+    sum = 1;
+  }
+  if (sum > array.length) {
+    sum = array.length;
+  }
+  for (let i = 0; i < sum; i++) {
+    arr[i] = array[array.length - sum + i];
+  }
+  return arr;
 }
-// 7/2 //
-const currectTime = new Date ();
-const time = currectTime.getHours();
-switch(true){
-    case time >= 23 && time <= 5:
-    alert('Good night')
-    break ;
-    case time >= 5 && time < 11:
-    alert('Good morning')
-    break ;
-    case time >= 11 && time < 17:
-    alert('Good afternoon')
-    break ;
-    case time >= 17 && time <= 23:
-    alert('Good evening')
-    break ;
+
+const arr = [1, 2, 3, 5, 3];
+console.log(lastElem(arr, 3));
+// 8 //
+function largecase(str) {
+  var array = str.split(' ');
+  var array2 = [];
+
+  for (var i = 0; i < array.length; i++) {
+    array2.push(array[i].charAt(0).toUpperCase() + array[i].slice(1));
+  }
+  return array2.join(' ');
 }
+console.log(largecase('i love java script'));
+
 
