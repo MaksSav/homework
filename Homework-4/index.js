@@ -8,7 +8,7 @@ function calcRectangleArea(width, height) {
 
 try {
   console.log(calcRectangleArea(10, 5));
-  console.log(calcRectangleArea(10, ));
+  console.log(calcRectangleArea(10,));
 } catch (error) {
   console.log(error.name);
   console.log(error.message);
@@ -34,10 +34,9 @@ class MonthException {
   monthArray = ["January", "February", "March", "April", "May", "June", "July",
     "August", "September", "October", "November", "December"
   ];
-  name;
+
   message;
-  constructor(name, message) {
-    this.name = name;
+  constructor(message) {
     this.message = message;
   }
 }
@@ -45,7 +44,6 @@ class MonthException {
 function showMonthName(month) {
 
   const mException = new MonthException("Incorrect month number");
-
   if (month < 1 || month > 12) {
     throw mException;
   } else {
@@ -57,7 +55,7 @@ try {
   console.log(showMonthName(5));
   console.log(showMonthName(14));
 } catch (exception) {
-  console.log(exception.name + " " + exception.message);
+  console.log(" " + exception.message);
 }
 // 4 //
 const user1 = {
