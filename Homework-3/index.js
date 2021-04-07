@@ -66,7 +66,9 @@ console.log(findMin(12, 14, 4, -4, 0.2));
 function testUnique(arg) {
   var n = arg.length;
   for (var i = 0; i < n - 1; i++) {
-    for (var j = i + 1; j < n; j++) { if (arg[i] === arg[j]) return false; }
+    for (var j = i + 1; j < n; j++) {
+      if (arg[i] === arg[j]) return false;
+    }
   }
   return true;
 }
@@ -94,10 +96,10 @@ const arr = [1, 2, 3, 5, 3];
 console.log(lastElem(arr, 3));
 // 8 //
 function largecase(str) {
-  var array = str.split(' ');
-  var array2 = [];
+  const array = str.split(' ');
+  const array2 = [];
 
-  for (var i = 0; i < array.length; i++) {
+  for (const i = 0; i < array.length; i++) {
     array2.push(array[i].charAt(0).toUpperCase() + array[i].slice(1));
   }
   return array2.join(' ');
