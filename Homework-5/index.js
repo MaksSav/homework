@@ -19,11 +19,11 @@ let mentor = {
 console.log(propsCount(mentor))
 // 2 //
 let student = {
-  name: "Kate",
-  age: 23,
-  course: "History",
-  direction: "Politics of Memory",
-  duration: 4,
+  name: "Maks",
+  lastName: "Savytskyi",
+  age: 18,
+  University: "NULP",
+  form: 1
 
 }
 
