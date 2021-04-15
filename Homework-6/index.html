@@ -123,18 +123,14 @@
     <span>Make me invisible, please!</span>
 
     <script>
-        document.getElementsByTagName("h1")[0].style.backgroundColor = "#1fc410";
-        myDiv.children[0].style.fontWeight = "bold";
-        myDiv.children[1].style.color = "#c42210";
-        myDiv.children[2].style.textDecoration = "underline";
-        myDiv.children[3].style.fontStyle = "italic";
-
-        let liArray = [...myList.children]
-        let liString = liArray.map(element => element.innerHTML).join("")
-        myList.innerHTML = liString
-
-        document.getElementsByTagName("span")[0].remove()
-
+        document.getElementsByTagName("h1")[0].style.backgroundColor = "green";
+        document.getElementById("myDiv").children[0].style.fontWeight = "bold";
+        document.getElementById("myDiv").children[1].style.color = "red";
+        document.getElementById("myDiv").children[2].style.textDecoration = "underline";
+        document.getElementById("myDiv").children[3].style.fontStyle = "italic";
+        document.getElementById("myList").style.listStyle = "none";
+        document.getElementById("myList").style.display = "flex";
+        document.getElementsByTagName("span")[0].style.display = "none";
     </script>
 </body>
 
