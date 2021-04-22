@@ -76,9 +76,41 @@ function mouseOutBtn() {
 
 // 6 //
 function showWindowSize() {
-document.getElementById("width").innerHTML = "Width: " + window.innerWidth;
-document.getElementById("height").innerHTML = "Height: " + window.innerHeight;
+  document.getElementById("width").innerHTML = "Width: " + window.innerWidth;
+  document.getElementById("height").innerHTML = "Height: " + window.innerHeight;
 }
 
 showWindowSize();
 window.addEventListener("resize", showWindowSize);
+// 7 //
+let countriesList = {
+  "ukr": ["Kyiv", "Lviv", "Ternopil"],
+  "usa": ["New York", "Chicago", "Los Angeles"],
+  "ger": ["Berlin", "Drezden", "Munich"]
+}
+
+function printCurrentState() {
+  let resultCountry = country.options[country.selectedIndex].text
+  let resultCity = cities.options[cities.selectedIndex].text
+  let p = document.getElementsByTagName("p")[0]
+  p.innerHTML = resultCountry + ", " + resultCity
+}
+
+function populateCitiesDropdown() {
+  let selectedCountry = country.options[country.selectedIndex].value
+  let citiesList = countriesList[selectedCountry]
+
+  cities.innerHTML = ""
+
+  for (let i = 0; i < citiesList.length; i++) {
+    let el = document.createElement("option")
+    el.text = citiesList[i]
+    cities.appendChild(el)
+  }
+
+  printCurrentState()
+}
+
+populateCitiesDropdown()
+country.addEventListener("change", populateCitiesDropdown)
+cities.addEventListener("change", printCurrentState)
